@@ -43,8 +43,7 @@ import java.util.List;
  *
  *
  *
- * //编程的考虑是：Water[5][4]标识数组，为1时，表示这个状态已经到达，为0时表示这个状态没有到达。
- */
+ * //编程的考虑是：Water[5][4]标识数组，为1时，表示这个状态已经到达，为0时表示这个状态没有到达。*/
 public class 水壶问题 {
     static int maxX=4,maxY=3;
     static int[][] water=new int[maxX+1][maxY+1];
