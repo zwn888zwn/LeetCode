@@ -25,6 +25,7 @@ public class 物资采购 {
         }
 
 
+
     }
     public static int bfs(int begin,int n,int k,int[] arr,int[][] path){
         int[] yuanliao=new int[k]; //k种原料齐不齐

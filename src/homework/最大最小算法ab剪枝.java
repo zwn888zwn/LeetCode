@@ -133,14 +133,8 @@ public class 最大最小算法ab剪枝 {
     public static void main(String[] args) {
         最大最小算法ab剪枝 obj=new 最大最小算法ab剪枝();
         obj.arr[1][1]=1;
-/*        obj.arr[0][0]=2;
-        obj.arr[0][1]=1;
-        obj.arr[0][2]=1;
-        obj.arr[2][0]=2;
-        obj.arr[2][1]=2;*/
         obj.count=1;
         obj.print();
-     //   TempNode node=obj.dfs(0,obj.MIN_VAL,obj.MAX_VAL);
 
         Scanner scan=new Scanner(System.in);
         while (obj.count<9){
