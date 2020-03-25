@@ -2,7 +2,7 @@ package 模拟题;
 
 import java.util.*;
 
-//66%  字节笔试第一题，为啥不行呢
+//AC66%  字节笔试第一题，为啥不行呢
 public class zj1 {
     public static void main(String[] args) {
         Scanner scan=new Scanner(System.in);
