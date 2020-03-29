@@ -15,7 +15,7 @@ public class _739每日温度 {
         return res;
     }
 
-    //stack
+    //stack 单调栈 处理单调增
     public int[] dailyTemperatures2(int[] T) {
         int[] res=new int[T.length];
         class Node{//不需要创建对象，只保存下标，也能知道值

@@ -1,5 +1,7 @@
 import java.util.ArrayDeque;
 import java.util.Deque;
+import java.util.Map;
+import java.util.Stack;
 
 //这类问题思想  分别对每个栏杆，求他的最大的左右范围 可以暴力求 也可以DP
 public class _84LargestRectangleinHistogram {
@@ -77,9 +79,43 @@ public class _84LargestRectangleinHistogram {
         return max;
     }
 
+    //单调栈
+    public int largestRectangleArea3(int[] bars) {
+        if(bars == null || bars.length == 0) {
+            return 0;
+        }
+        int n=bars.length;
+        int result=0;
+
+        Stack<Integer> stack=new Stack<>();
+        stack.push(-1);
+        stack.push(0);
+        for (int i=1;i<n;i++){
+            int peekIndex=stack.peek();
+            if (peekIndex!=-1){
+                if (bars[peekIndex]<=bars[i])
+                    stack.push(i);
+                else {
+                    while (stack.peek()!=-1 && bars[stack.peek()]>bars[i]){
+                        peekIndex=stack.pop();
+                        result= Math.max(result,(i-1-stack.peek())*bars[peekIndex]);
+                    }
+                    stack.push(i);
+                }
+            }
+        }
+        while (stack.peek()!=-1){
+            int peekIndex=stack.pop();
+            result= Math.max(result,(n-1-stack.peek())*bars[peekIndex]);
+        }
+
+        return result;
+
+    }
+
     public static void main(String[] args) {
         _84LargestRectangleinHistogram obj=new _84LargestRectangleinHistogram();
-        obj.largestRectangleArea(new int[]{4,2,0,3,2,4,3,4});
-        //obj.largestRectangleArea(new int[]{2,1,5,6,2,3});
+        //obj.largestRectangleArea(new int[]{4,2,0,3,2,4,3,4});
+        obj.largestRectangleArea3(new int[]{2,1,5,6,2,3});
     }
 }
