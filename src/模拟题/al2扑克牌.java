@@ -10,7 +10,6 @@ public class al2扑克牌 {
             arr[i]=scan.nextInt();
         }
         //dfs 尝试3连对，顺子，对子，单张 。
-
         System.out.println(8);
 
 
